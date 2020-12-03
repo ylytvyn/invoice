@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Invoice</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+        <!-- Container -->
+        <div class="container-fluid invoice-container">
+        <!-- Header -->
+            <header>
+                <div class="row align-items-center">
+                    <div class="col-12 text-center">
+                        <h4>Shop Invoice</h4>
+                    </div>
+                </div>
+                <hr>
+            </header>
+        
+        <!-- Main Content -->
+            <main>
+                <div class="row">
+                    <div class="col-6 date"><strong>Date:</strong> </div>
+                    <div class="col-6 text-right"> <strong>Invoice No:</strong> 16835</div>
+                </div>
+                
+            
+                <div class="card">
+                    <div class="card-header px-2 py-0">
+                        <div class="card-row">
+                            <div class="card-col col-5"><strong>Item</strong></div>
+                            <div class="card-col col-2 text-center"><strong>Price</strong></div>
+                            <div class="card-col col-2 text-center"><strong>QTY</strong></div>
+                            <div class="card-col col-2 text-right"><strong>Amount</strong></div>
+                            <div class="card-col col-1 text-center"></div>
+                        </div>
+                    </div>
+                    <div class="card-body px-2 py-0">
+                        <!-- <div class="card-row">
+                            <div class="card-col col-5">Design</div>
+                            <div class="card-col col-2 text-center">$50.00</div>
+                            <div class="card-col col-2 text-center">10</div>
+                            <div class="card-col col-2 text-right">$500.00</div>
+                            <div class="card-col col-1 text-center">
+                                <button type="button" class="close">&times;</button>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-row">
+                            <div class="col-9 text-right"><strong>Total:</strong></div>
+                            <div class="col-3 total"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="text-center mt-4">
+                <div class="btn-group d-print-none"> 
+                    <button type="button" class="btn btn-sm btn-primary border" id="add-btn">Add Item</button> 
+                    <button type="button" class="btn btn-sm btn-light border" id="print-btn">Print</button> 
+                    <button type="button" class="btn btn-sm btn-light border" id="expensive-btn">Expensive Item</button>
+                    <button type="button" class="btn btn-sm btn-light border" id="average-btn">Average Price</button>
+                </div>
+            </footer>
+        </div>
+
+        <div class="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Add new item</h5>
+                </div>
+                <div class="modal-body">
+                    <form name="itemFrom">
+                        <div class="form-group">
+                            <label for="item">Item:</label>
+                            <select class="form-control" id="item"></select>
+                          </div>
+                        <div class="form-group">
+                          <label for="qty">Quantity:</label>
+                          <input type="number" class="form-control" id="qty" value="1" min="1">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary save-btn">Add</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
