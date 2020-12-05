@@ -84,7 +84,6 @@ const ITEMS = [
 ];
 
 let SHOPPING_ITEMS = [];
-let sumShoppingItems = 0;
 
 (function(){
     // Click on ADD ITEM button
@@ -203,9 +202,8 @@ function addItem() {
 // Display Shopping List
 function drawList() {
     let container = document.querySelector('.card-body'),
-        totalContainer = document.querySelector('.total');
-
-    sumShoppingItems = 0;
+        totalContainer = document.querySelector('.total'),
+        sumShoppingItems = 0;
 
     while (container.firstChild) {
         container.removeChild(container.lastChild);
@@ -277,7 +275,15 @@ function findAveragePrice() {
         return;
     }
 
-    let avg = (sumShoppingItems / SHOPPING_ITEMS.length).toFixed(2);
+    let sum = 0;
+
+    SHOPPING_ITEMS.forEach((item) => {
+        let initialItem = ITEMS.find(e => e.id === item.itemId);
+        
+        sum += initialItem.price;
+    });
+
+    let avg = (sum / SHOPPING_ITEMS.length).toFixed(2);
 
     showWarning(`The Average price in your Shopping List is $${avg}.`);
 }
